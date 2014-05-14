@@ -472,6 +472,9 @@ every rule set for each field in your model. Defining new validation rules is as
 easy as telling this object to store new validation methods for the fields you
 want to.
 
+.. note::
+
+    Changing validation rules dynamically occur on the beforeValidation method.
 
 Adding new validation rules
 ---------------------------
