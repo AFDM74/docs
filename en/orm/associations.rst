@@ -472,7 +472,7 @@ syntax::
         public function initialize(array $config)
         {
             $this->belongsToMany('Tags', [
-                'joinTable' => 'article_tag',
+                'joinTable' => 'articles_tags',
             ]);
         }
     }
@@ -481,7 +481,8 @@ Possible keys for belongsToMany association arrays include:
 
 - **className**: the class name of the model being associated to
   the current model. If you're defining a 'Article belongsToMany Tag'
-  relationship, the className key should equal 'Tags.'
+  relationship, the className key in the Articles Model should equal
+  'Tags' and the same way around for the Tags Model.
 - **joinTable**: The name of the join table used in this
   association (if the current table doesn't adhere to the naming
   convention for belongsToMany join tables). By default this table
@@ -499,7 +500,7 @@ Possible keys for belongsToMany association arrays include:
 - **sort** an array of find() compatible order clauses.
 - **dependent**: When the dependent key is set to ``false``, and an entity is
   deleted, the data of the join table will not be deleted.
-- **through** Allows you to provide a either the name of the Table instance you
+- **through** Allows you to provide either the name of the Table instance you
   want used on the join table, or the instance itself. This makes customizing
   the join table keys possible, and allows you to customize the behavior of the
   pivot table.
